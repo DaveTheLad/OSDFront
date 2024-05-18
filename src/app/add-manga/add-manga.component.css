@@ -1,0 +1,11 @@
+/* CSS code for the "Add Manga" button */
+.btn-add-manga {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* CSS code for the message displayed when the user is not authorized */
+.alert-not-authorized {
+  margin-top: 20px;
+  color: red;
+}

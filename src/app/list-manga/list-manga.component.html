@@ -1,0 +1,55 @@
+<!-- Banner section -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="banner-image">
+        <img src="../assets/images/banner.jpg" alt="Banner Image">
+        <div class="overlay"></div> <!-- Add this div for the overlay -->
+        <form [formGroup]="searchForm" class="search-form">
+          <div class="input-group">
+            <input type="text" formControlName="search" class="form-control" placeholder="Search....">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cards container with margin-top to position below banner -->
+<div class="container-fluid cards-container" [ngClass]="{'dark-mode': darkModeEnabled}">
+  <div *ngIf="(auth.isAuthenticated$ | async)">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-3" *ngFor="let manga of filteredMangas">
+        <div class="card">
+          <!-- Display the image -->
+          <div class="card-img-placeholder">
+            <img *ngIf="manga.image" [src]="manga.image" alt="{{ manga.title }}" class="img-fluid">
+          </div>
+
+          <!-- Additional text under each card -->
+          <div class="card-footer">
+            <p><strong>Title:</strong> {{ manga.title }}</p>
+            <p><strong>Author:</strong> {{ manga.author }}</p>
+            <p><strong>Year Written:</strong> {{ manga.year_written }}</p>
+            <p><strong>Number Of Volumes:</strong> {{ manga.NumberOfVolumes }}</p>
+            <div class="d-flex justify-content-end">
+              <button (click)="delManga(manga)" class="btn btn-danger mr-2" *ngIf="manga.canDelete">Delete</button>
+              <button class="btn btn-danger" *ngIf="!manga.canDelete" disabled>User is not authorized to delete or update manga</button>
+              <a [routerLink]="['/edit-manga', manga._id]" class="btn btn-success" *ngIf="manga.canEdit">Edit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!(auth.isAuthenticated$ | async)" class="alert alert-warning">
+    To access the manga list, you need to log in. Please log in to view the manga list.
+  </div>
+
+  <!-- Delete success message -->
+  <div class="row" *ngIf="deleteSuccessMessage">
+    <div class="col-md-12 text-center">
+      <p class="text-danger">{{ deleteSuccessMessage }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,101 @@
+/* Existing CSS */
+
+/* Container for cards with margin-top */
+.cards-container {
+  margin-top: 460px; /* Adjust as needed to position cards below the banner */
+}
+
+button {
+  margin-right: 10px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  margin-right: 10px;
+  margin-top: 25px;
+}
+
+.card {
+  max-width: 350px; /* Set the maximum width of the card */
+  height: auto; /* Allow the height to adjust based on content */
+  margin-bottom: 80px; /* Add some margin at the bottom */
+  margin-top: 80px;
+  transition: all .2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card .card-img-placeholder {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  width: 100%;
+  height: 500px; /* Increase the height to make the image bigger */
+  background-color: #ccc; /* Placeholder background color */
+}
+
+.card .card-img-placeholder img {
+  width: 100%; /* Set the width of the image to fill the placeholder */
+  height: 100%; /* Set the height of the image to fill the placeholder */
+  object-fit: cover; /* Maintain aspect ratio and cover entire placeholder */
+  
+}
+
+.card-footer {
+  color: black; /* Set the color of the text to black */
+  font-weight: bold;
+}
+
+.container-fluid {
+  padding: 0; /* Remove default padding */
+}
+
+.banner-container {
+  position: relative; /* Make the container relative */
+  width: 100%; /* Ensure the container spans full width */
+}
+
+.banner-image {
+  position: absolute; /* Position the banner absolutely */
+  top: 50px; /* Add margin from the top (adjust as needed) */
+  left: 0; /* Align the banner to the left */
+  width: 100vw; /* Full viewport width */
+  height: 400px;
+  background-color: #ccc;
+  overflow: hidden;
+  display: flex; /* Use flexbox for centering */
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensure the image covers the entire banner */
+}
+
+.search-form {
+  position: absolute; /* Position the form absolutely */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for accurate centering */
+  width: 80%; /* Adjust width as needed */
+  max-width: 600px; /* Maximum width for the search form */
+  z-index: 10; /* Ensure the form is above the image */
+}
+
+.search-form .input-group {
+  display: flex;
+}
+
+.search-form .form-control {
+  flex: 1; /* Make the input take up available space */
+}
+
+.search-form .input-group .form-control {
+  margin: 0; /* Remove margin */
+}

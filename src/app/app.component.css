@@ -1,0 +1,63 @@
+.navbar-nav {
+  display: flex;
+  align-items: center; /* Align items vertically center */
+}
+.app-title {
+  font-family: 'Jazz LET', fantasy; /* Use the Pacifico font */
+}
+
+.dark-mode-logo {
+  transition: transform 0.3s ease; /* Add transition for smooth effect */
+}
+
+.dark-mode-logo:hover {
+  transform: rotate(180deg); /* Rotate the logo on hover */
+}
+
+/* Navbar background color in dark mode */
+.dark-mode .navbar {
+  background-color: #222 !important; /* Dark mode background color */
+}
+/* Navbar text color in dark mode */
+.dark-mode .navbar-nav .nav-link {
+  color: #fff !important; /* White text color */
+}
+.navbar-nav .nav-link {
+  margin-right: 10px; /* Adjust margin between nav links */
+}
+
+.nav-bar__buttons {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Push the buttons to the right */
+}
+
+.nav-bar__buttons button {
+  margin-left: 10px; /* Adjust margin between buttons */
+}
+
+.nav-bar__buttons img {
+  width: 24px; /* Adjust width of the image */
+  height: 24px; /* Adjust height of the image */
+  cursor: pointer; /* Add pointer cursor for clickable effect */
+  margin-right: 10px; /* Adjust margin between image and button */
+}
+
+.dark-mode-container {
+  margin-left: 10px; /* Adjust margin between dark mode button and other buttons */
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #222;
+  
+}
+
+.dark-mode .app-title {
+  color: #fff; /* White text color */
+}
+
+.row {
+  margin-top: 10px;
+}
+

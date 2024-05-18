@@ -1,0 +1,21 @@
+body {
+  background-color: #D3D3D3;
+}
+/* Dark mode styles */
+.dark-mode {
+  background-color: #222;
+  color: #fff;
+}
+
+/* Default text color */
+.table-heading,
+.table-data {
+  color: #000; /* Black text color */
+}
+
+/* Text color in dark mode */
+.dark-mode .table-heading,
+.dark-mode .table-data {
+  color: #fff; /* White text color */
+}
+

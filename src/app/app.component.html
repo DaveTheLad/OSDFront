@@ -1,0 +1,36 @@
+<div class="container-fluid" [ngClass]="{'dark-mode': darkModeEnabled}">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand app-title" href="#">App Manga</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" [routerLink]="['/']">Home</a>
+          <a class="nav-link" [routerLink]="['/add-manga']">Add Manga</a>
+          <a class="nav-link" [routerLink]="['/list-manga']">List Manga</a>
+        </div>
+        <div class="nav-bar__buttons">
+          <img [src]="darkModeEnabled ? '../assets/images/moon.jpg' : '../assets/images/night_mode.jpg'" alt="Dark Mode" 
+               (click)="toggleDarkMode()" class="dark-mode-logo" id="darkModeLogo">
+          <ng-container *ngIf="isAuthenticated$ | async; else loggedOut">
+            <button class="btn btn-outline-danger" (click)="auth.logout({ returnTo: document.location.origin })">
+              Log out
+            </button>
+          </ng-container>
+          <ng-template #loggedOut>
+            <button class="btn btn-outline-success" (click)="auth.loginWithRedirect()">Log in</button>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Router outlet -->
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

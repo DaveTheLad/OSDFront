@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>Edit Manga</h2>
+        </div>
+    </div>
+
+    <form [formGroup]="addManga" novalidate class="form">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4 form-group">Title</div>
+            <div class="col-md-4 form-group"><input type="text" formControlName="title" class="form-control"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4 form-group">Author</div>
+            <div class="col-md-4 form-group"><input type="text" formControlName="author" class="form-control"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4 form-group">Year Written</div>
+            <div class="col-md-4 form-group"><input type="number" formControlName="year_written" class="form-control"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4 form-group">Number Of Volumes</div>
+            <div class="col-md-4 form-group"><input type="number" formControlName="NumberOfVolumes" class="form-control"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4 form-group">Image</div>
+            <div class="col-md-4 form-group">
+                <input type="text" formControlName="image" class="form-control">
+                <img *ngIf="addManga.get('image')?.value" [src]="addManga.get('image')?.value" alt="Manga Image" style="max-width: 100%; margin-top: 10px;">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <button type="submit" (click)="onSubmit()" class="btn btn-success">Update Manga</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Success message -->
+    <div class="row" *ngIf="updateSuccess">
+        <div class="col-md-12 text-center">
+            <p class="text-success">Successfully updated! Redirecting....</p>
+        </div>
+    </div>
+
+    <!-- No changes message -->
+    <div class="row" *ngIf="noChanges">
+        <div class="col-md-12 text-center">
+            <p class="text-danger">No changes were made.</p>
+        </div>
+    </div>
+</div>
