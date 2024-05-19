@@ -10,27 +10,27 @@ export class MangasService {
   constructor(private http: HttpClient) { }
 
   addManga(manga: any) {
-    return this.http.post('http://localhost:8080/endpoint/add-manga', manga);
+    return this.http.post('https://osdapi-production.up.railway.app/endpoint/add-manga', manga);
   }
 
   listManga() {
-    return this.http.get('http://localhost:8080/endpoint/');
+    return this.http.get('https://osdapi-production.up.railway.app/endpoint/');
   }
 
   deleteManga(id: any) {
-    return this.http.delete('http://localhost:8080/endpoint/delete-manga/' + id);
+    return this.http.delete('https://osdapi-production.up.railway.app/delete-manga/' + id);
   }
 
   singleManga(id: any) {
-    return this.http.get('http://localhost:8080/endpoint/manga/' + id);
+    return this.http.get('https://osdapi-production.up.railway.app/manga/' + id);
   }
 
   updateManga(id: any, manga: any) {
-    return this.http.put('http://localhost:8080/endpoint/update-manga/' + id, manga);
+    return this.http.put('https://osdapi-production.up.railway.app/update-manga/' + id, manga);
   }
 
   searchManga(keyword: string) {
     let params = new HttpParams().set('key', keyword);
-    return this.http.get('http://localhost:8080/endpoint/search', { params: params });
+    return this.http.get('https://osdapi-production.up.railway.app/search', { params: params });
   }
 }
