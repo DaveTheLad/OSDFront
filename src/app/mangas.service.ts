@@ -18,19 +18,19 @@ export class MangasService {
   }
 
   deleteManga(id: any) {
-    return this.http.delete('https://osdapi-production.up.railway.app/delete-manga/' + id);
+    return this.http.delete('https://osdapi-production.up.railway.app/endpoint/delete-manga/' + id);
   }
 
   singleManga(id: any) {
-    return this.http.get('https://osdapi-production.up.railway.app/manga/' + id);
+    return this.http.get('https://osdapi-production.up.railway.app/endpoint/manga/' + id);
   }
 
   updateManga(id: any, manga: any) {
-    return this.http.put('https://osdapi-production.up.railway.app/update-manga/' + id, manga);
+    return this.http.put('https://osdapi-production.up.railway.app/endpoint/update-manga/' + id, manga);
   }
 
   searchManga(keyword: string) {
     let params = new HttpParams().set('key', keyword);
-    return this.http.get('https://osdapi-production.up.railway.app/search', { params: params });
+    return this.http.get('https://osdapi-production.up.railway.app/endpoint/search', { params: params });
   }
 }
