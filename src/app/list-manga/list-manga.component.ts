@@ -62,11 +62,11 @@ export class ListMangaComponent implements OnInit {
   }
 
   canEdit(manga: any): boolean {
-    return this.user && this.user.email === 's00212387@atu.ie';
+    return this.user && this.user.email?.includes('@atu.ie');
   }
 
   canDelete(manga: any): boolean {
-    return this.user && this.user.email === 's00212387@atu.ie';
+    return this.user && this.user.email?.includes('@atu.ie');
   }
 
   delManga(datas: any) {
