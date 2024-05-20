@@ -32,7 +32,7 @@ export class ListMangaComponent implements OnInit {
   ngOnInit(): void {
     this.auth.user$.subscribe((user) => {
       this.user = user;
-      if (this.user && this.user.email === 's00212387@atu.ie') {
+      if (this.user && this.user.email?.includes('@atu.ie')) {
         this.loadManga();
       } else {
         this.mangaservice.listManga().subscribe((data: any) => {

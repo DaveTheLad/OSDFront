@@ -29,7 +29,7 @@
       </div>
       <!-- Other alerts -->
       <div *ngIf="!isAdmin()" class="alert alert-warning">
-        Only an admin can add new manga titles to the game list.
+        Only an admin can add new manga titles to the manga list.
       </div>
       <div *ngIf="isNotAdmin" class="alert alert-warning">
         You are not authorized to add new manga titles!
@@ -37,6 +37,6 @@
     </form>
   </div>
   <div *ngIf="!(auth.isAuthenticated$ | async)" class="alert alert-warning">
-    Please login to enable adding new manga titles to the game list.
+    Please login to enable adding new manga titles to the manga list.
   </div>
 </div>
